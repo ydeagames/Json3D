@@ -1,0 +1,23 @@
+{
+  "Cube": {
+    "type"     : "cube",
+    "position" : [-1, 0, 0],
+    "size"     : [1, 1.5, 1.2],
+	 "color"	   :"red"
+
+  },
+  "Box": {
+    "type"       : "box",
+    "size" 	     : [1, 1.5, 1.2],
+    "position"   : [1,0,0],
+	"color"	     :"blue"
+
+  },
+  "Circle":{
+  	"type"	  :"circle",
+	"size"    :[1,1,1],
+	"position":[0,0,0],
+	"vel"     :[0.1,0,0],
+	"color"   :"white"
+  }
+}
