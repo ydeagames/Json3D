@@ -3,8 +3,11 @@
 #include <Framework/GameContext.h>
 #include <Framework/GameCamera.h>
 
-class GeometricObject : public GameObject
+class GeometricObject : public Component
 {
+	COMPONENT(Component)
+
+private:
 	// ジオメトリプリミティブ
 	std::function<std::unique_ptr<DirectX::GeometricPrimitive>(GameContext& context)> m_geometricPrimitiveGenerator;
 	// ジオメトリプリミティブ
@@ -25,8 +28,11 @@ public:
 	void Render(GameContext& context);
 };
 
-class FontObject : public GameObject
+class FontObject : public Component
 {
+	COMPONENT(Component)
+
+private:
 	// フォントネーム
 	std::wstring m_fontName;
 	// フォントネーム
@@ -55,3 +61,23 @@ public:
 	inline void SetText(const std::wstring& text) { m_text = text; }
 	inline const std::wstring GetText() const { return m_text; }
 };
+
+class Rigidbody : public Component
+{
+	COMPONENT(Component)
+
+public:
+	// 速度
+	DirectX::SimpleMath::Vector3 velocity;
+	// 速度
+	DirectX::SimpleMath::Vector3 acceleration;
+
+public:
+	// コンストラクタ
+	Rigidbody()
+	{
+	}
+	// 更新
+	void Update(GameContext& context);
+};
+

@@ -58,7 +58,7 @@ void BaseScene::Build(GameContext& context)
 		ifs.close();
 
 		// 確認用
-		std::cout << value << std::endl;
+		//std::cout << value << std::endl;
 
 		// データの使用
 		picojson::object& root = value.get<picojson::object>();
@@ -79,10 +79,13 @@ void BaseScene::Build(GameContext& context)
 			if (obj.count("vel"))
 				vel = picojson::get_as<Vector3>(obj["vel"]);
 
-			auto geo = std::make_shared<GeometricObject>(types[type], colors[color]);
-			geo->transform.LocalPosition = position;
-			geo->transform.LocalScale = size;
-			context << geo;
+			auto geoObj = std::make_shared<GameObject>();
+			auto geo = geoObj->AddComponent<GeometricObject>(types[type], colors[color]);
+			geo->gameObject->transform->LocalPosition = position;
+			geo->gameObject->transform->LocalScale = size;
+			auto rig = geoObj->AddComponent<Rigidbody>();
+			rig->velocity = vel;
+			context << geoObj;
 		}
 	}
 }

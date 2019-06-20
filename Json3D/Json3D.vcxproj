@@ -195,6 +195,7 @@
     <ClInclude Include="Utilities\Random.h" />
     <ClInclude Include="Utilities\Singleton.h" />
     <ClInclude Include="Utilities\String.h" />
+    <ClInclude Include="Utilities\TypeId.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Common\DeviceResources.cpp" />

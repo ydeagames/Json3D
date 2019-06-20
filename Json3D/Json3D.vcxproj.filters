@@ -119,6 +119,9 @@
     <ClInclude Include="Framework\Component.h">
       <Filter>Framework</Filter>
     </ClInclude>
+    <ClInclude Include="Utilities\TypeId.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />

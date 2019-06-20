@@ -5,10 +5,6 @@
 class BaseScene : public ISceneBuilder
 {
 public:
-	static int mode1p;
-	static int mode2p;
-
-public:
 	// ê∂ê¨
 	void Build(GameContext& context);
 };

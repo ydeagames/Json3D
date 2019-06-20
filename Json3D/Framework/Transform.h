@@ -4,6 +4,8 @@
 // Transformクラス
 class Transform : public Component
 {
+	COMPONENT(Component)
+
 public:
 	// コンストラクタ
 	Transform::Transform();
